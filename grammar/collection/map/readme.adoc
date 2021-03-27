@@ -1,0 +1,6 @@
+
+= map
+
+== map null 支持情况
+
+image::.readme_images/map-of-null-supported.png[map null 支持情况]

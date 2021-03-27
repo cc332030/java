@@ -1,0 +1,55 @@
+= thread
+
+== 阻塞线程
+
+- Thread.join()：必须等线程结束
+- CountDownLatch：计数为 0 就可继续
+
+=== Thread.join()
+
+阻塞调用此方法的线程(calling thread)，直到线程t完成
+
+[source,java]
+----
+class test{
+    public static void main(String[] args){
+        for (Thread hook : threads) {
+            hook.start();
+        }
+        for (Thread hook : threads) {
+            while (true) {
+                try {
+                    hook.join();
+                    break;
+                } catch (InterruptedException ignored) {
+                }
+            }
+        }
+    }
+}
+----
+
+
+=== CountDownLatch
+
+计数为 0 就可以继续
+
+[source,java]
+----
+class test{
+    public static void main(String[] args){
+        int size = 10;
+        CountDownLatch countDownLatch = new CountDownLatch(size);
+
+        while (size-- > 0) {
+            try {
+
+            } finally{
+                countDownLatch.countDown();
+            }
+        }
+
+        countDownLatch.await();
+    }
+}
+----

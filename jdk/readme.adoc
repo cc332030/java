@@ -1,0 +1,11 @@
+
+= jdk
+
+== 全局环境
+
+JAVA_TOOL_OPTIONS
+
+[source,text]
+----
+-Dfile.encoding=utf-8
+----

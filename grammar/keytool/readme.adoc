@@ -1,0 +1,41 @@
+
+= 证书工具
+
+默认密码: changeit
+[source,shell script]
+----
+cd D:\program\dev\platform\jvm\jdk\jdk7\jre\lib\security
+keytool -import -alias c332030 -keystore cacerts -file C:/c332030.cer
+
+keytool -list -keystore cacerts
+
+----
+
+[source,shell script]
+----
+@echo off
+
+echo.
+set /p jdkPath=请输入 jdk1.7 路径:
+
+echo.
+set /p cerPath=请输入 证书 路径:
+
+cd /d %jdkPath%
+cd /d jre\lib\security
+
+echo.
+echo 默认密码: changeit
+
+set keystore=cacerts
+set alias=c332030
+
+echo.
+keytool -delete -alias %alias% -keystore %keystore%
+
+echo.
+keytool -import -alias %alias% -keystore %keystore% -file %cerPath%
+
+pause >nul
+
+----

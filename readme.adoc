@@ -1,0 +1,9 @@
+
+= java-note
+
+JAVA_TOOL_OPTIONS
+[source,shell script]
+----
+-Dfile.encoding=utf-8
+
+----

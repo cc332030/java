@@ -1,0 +1,9 @@
+
+= Unsafe
+
+多线程判断 voliate 变量是否相等
+
+[source,text]
+----
+Unsafe.getUnsafe().compareAndSwapObject()
+----

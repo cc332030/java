@@ -1,0 +1,26 @@
+
+= jdk proxy
+
+== jdk 动态代理生成 classs
+[source,java]
+----
+class Test{
+
+    @Test
+    public void testJdkProxy() {
+
+        Class<?>[] interfaces = new Class[]{WxUserSyncServiceImpl.class};
+        byte[] bytes = ProxyGenerator.generateProxyClass("UserService", interfaces);
+        File file = new File("d:/WxUserSyncServiceImpl.class");
+        try {
+
+            OutputStream outputStream = new FileOutputStream(file);
+            outputStream.write(bytes);
+            outputStream.flush();
+            outputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+----
