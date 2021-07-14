@@ -9,7 +9,7 @@ echo "url: ${url}"
 newUrl="https://c332030.com/proxy?url=${url}"
 echo "newUrl: ${newUrl}"
 
-curl -L "${url}" -o /tmp/jdk.tar.gz
+curl -L "${newUrl}" -o /tmp/jdk.tar.gz
 
 jdk_home=/usr/local/jdk
 
@@ -21,7 +21,7 @@ java_home="${jdk_home}/$(ls ${jdk_home})"
 echo "java_home: ${java_home}"
 
 old_path="export PATH=\""
-new_path="export JAVA_HOME=${java_home}\n${old_path}\$JAVA_HOME/bin;"
+new_path="export JAVA_HOME=${java_home}\n${old_path}\$JAVA_HOME/bin:"
 
 sed_command="s@${old_path}@${new_path}@g"
 echo "sed_command: ${sed_command}"
