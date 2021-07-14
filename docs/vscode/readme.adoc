@@ -1,0 +1,9 @@
+
+= vscode java
+
+[source,json]
+----
+{
+    "java.home": "/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
+}
+----
