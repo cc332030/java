@@ -2,14 +2,11 @@
 
 set -e
 
-echo please input jdk download url：
+echo please input jdk download url:
 read -r url
 echo "url: ${url}"
 
-newUrl="https://c332030.com/proxy?url=${url}"
-echo "newUrl: ${newUrl}"
-
-curl -L "${newUrl}" -o /tmp/jdk.tar.gz
+curl -L "${url}" -o /tmp/jdk.tar.gz
 
 jdk_home=/usr/local/jdk
 
