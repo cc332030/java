@@ -7,7 +7,7 @@ work_dir=/tmp/adoptopenjdk
 mkdir -p "${work_dir}"
 cd "${work_dir}"
 
-apt-get install -y wget apt-transport-https gnupg
+apt-get install -y software-properties-common apt-transport-https gnupg
 
 gpg_file=adoptopenjdk-keyring.gpg
 gpg_file_path="./${gpg_file}"
@@ -25,6 +25,8 @@ mv "${gpg_output_file}" /usr/share/keyrings
 
 VERSION_CODENAME=$(cat /etc/os-release | grep VERSION_CODENAME | cut -d = -f 2)
 echo "deb [signed-by=/usr/share/keyrings/${gpg_output_file}] https://adoptopenjdk.jfrog.io/adoptopenjdk/deb ${VERSION_CODENAME} main" | tee /etc/apt/sources.list.d/adoptopenjdk.list
+
+rm -rf "${work_dir}"
 
 apt-get update
 
