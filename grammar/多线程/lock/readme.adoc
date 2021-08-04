@@ -11,9 +11,9 @@
 
 乐观锁：CAS
 
-image:.锁_images/锁类型.png[]
+image:.readme_images/锁类型.png[]
 
-image:.锁_images/锁类型2.png[]
+image:.readme_images/锁类型2.png[]
 
 == synchronized
 
@@ -62,7 +62,7 @@ JDK 6 中变为默认开启 自旋锁
 
 锁状态，只能升级不能降级：无锁 VS 偏向锁 VS 轻量级锁 VS 重量级锁
 
-image::.锁_images/锁状态.png[]
+image::.readme_images/锁状态.png[]
 
 === 偏向锁
 
