@@ -1,6 +1,11 @@
 
 = map
 
+== 属性
+
+init: 16 +
+size: 2^n, total > size * 0.75（可变） +
+
 == map null 支持情况
 
 image::.readme_images/map-of-null-supported.png[map null 支持情况]

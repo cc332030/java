@@ -1,0 +1,7 @@
+
+= list
+
+== 属性
+
+init: 10 +
+size: size + size > 1 +
