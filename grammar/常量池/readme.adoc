@@ -1,0 +1,13 @@
+
+= 常量池
+
+== 基本类型的包装类
+
+范围：[-128，127]
+
+. Byte
+. Short
+. Integer
+. Long
+. Character
+. Boolean
