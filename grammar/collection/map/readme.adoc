@@ -1,6 +1,15 @@
 
 = map
 
+== 类型
+
+. Map
+. ThreadLocal
+. ClassValue
+. BitSet
+
+    位图
+
 == 属性
 
 init: 16 +
