@@ -9,5 +9,5 @@
 . Short
 . Integer
 . Long
-. Character
-. Boolean
+. Character [0-127]
+. Boolean [true, false]
