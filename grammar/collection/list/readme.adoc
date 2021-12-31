@@ -5,3 +5,17 @@
 
 init: 10 +
 size: size + size > 1 +
+
+== ArrayList
+
+jdk7 无参构造方法创建的是空数组，添加元素时才初始化
+
+== LinkedList
+
+. jdk1.6 双向循环列表
+    初始化一个 Entry 作为 header，首尾相连
+
+. jdk1.7 双向列表
+    first、last 节点 Node
+
+非循环列表在首尾操作时只需要判断一边（首前面没了，尾后面没了），效率更高效
