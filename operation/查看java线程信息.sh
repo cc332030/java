@@ -18,3 +18,11 @@ less 1.txt
 
 # 或
 jstack 17582 | grep b07
+
+
+# in docker use jattach
+# https://github.com/apangin/jattach
+
+jattach <pid> threaddump（像 jstack 一样工作）
+jattach <pid> inspectheap（像 jmap -histo 一样工作）
+jattach <pid> jcmd GC.class_stats
