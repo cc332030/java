@@ -1,0 +1,10 @@
+
+= jvm 参数
+
+- -XX:+HeapDumpOnOutOfMemoryError
+
+    OutOfMemoryError 时，生成转储文件
+
+- -XX:HeapDumpPath=/data/dumps
+
+    转储文件存储位置
