@@ -1,0 +1,13 @@
+
+= jmap
+
+导出 hprof
+
+[source,shell]
+----
+
+pid=31608
+
+jmap -dump:format=b,file=${pid}-1.hprof ${pid}
+
+----

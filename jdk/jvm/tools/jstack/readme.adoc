@@ -1,0 +1,16 @@
+
+= jstack
+
+[source,shell]
+----
+
+# 筛选线程
+# 找出运行时间最长的线程（阻塞）
+top -Hp 31608
+
+# 线程转16进制
+printf "%x\n" 31623
+
+jstack 31608 > jstack.log
+
+----
