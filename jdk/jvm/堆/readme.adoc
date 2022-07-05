@@ -3,12 +3,43 @@
 
 == 新生代
 
+MinorGC（复制算法）
+
 . Eden
 . From Survivor
+
+    将上一次MinorGC的幸存者作为这一次MinorGC的被扫描者。
+
 . To Survivor
+
+    保留上一次MinorGC时的幸存者
 
 首先分配的对象实例会到 Eden 区，在新生代这块区域一般是最大的，与 From Survivor 的比例是8:1:1，当然这个比例可以通过JVM参数来改变。
 
 而且当分配的对象实体很大的时候将会直接进入到老年代。
 
+大对象的定义和具体的JVM版本，堆大小，垃圾回收策略有关，一般为2kb-128kb，可以同XX:pretenureSizeThreshold设置其大小
+
+流程
+
+. Eden & From -> To 复制算法
+. clean Eden & From 清空
+. From <--> To 交换
+
 == 老年代
+
+MajorGC（标记清除算法）， 不会频繁触发
+
+ServivorTo 内存不足 或者是大对象
+
+在进行MajorGC前，JVM会进行一次MinorGC在MinorGC过后仍然出现老年代空间不足和无法找到足够大的连续空间分配给新创建的大对象时，会触发MajorGC进行垃圾回收，释放JVM的内存空间。
+
+对象晋升老年代的标准由XX:MaxTenuringThreshold设置，默认为15
+
+== 永久代
+
+不会进行 GC
+
+== 其他
+
+Full GC 是清理整个堆空间—包括年轻代和永久代
