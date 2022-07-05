@@ -1,0 +1,15 @@
+
+= arthas thread
+
+== 一键展示当前最忙的前N个线程并打印堆栈
+[source,shell]
+----
+thread -n 3
+----
+
+== 找出当前阻塞其他线程的线程
+
+[source,shell]
+----
+thread -b
+----
