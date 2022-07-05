@@ -10,4 +10,7 @@ pid=31608
 
 jmap -dump:format=b,file=${pid}-1.hprof ${pid}
 
+# 查看堆栈，新生代，老年代
+jmap -heap 31608
+
 ----
