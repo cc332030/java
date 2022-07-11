@@ -1,0 +1,8 @@
+
+= trace
+
+== 打印方法耗时（找出性能瓶颈）
+[source,shell]
+----
+trace classFullName method
+----
