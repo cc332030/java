@@ -48,6 +48,8 @@ synchronized 通过 Monitor来实现线程同步，Monitor 是依赖于底层的
     公平锁
     自旋锁
 
+image::ReentrantLock加锁流程.png[ReentrantLock加锁流程]
+
 自旋锁：不会使线程进入阻塞状态，循环调用 CAS
 
 想尽办法避免线程进入内核的阻塞状态是我们去分析和理解锁设计的关键钥匙（逻辑层上控制锁）。
