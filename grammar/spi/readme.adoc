@@ -1,6 +1,12 @@
 
 = SPI（Service Provider Interface）
 
+类型：
+
+. jdk 自带（当前）
+. spring SPI - `spring.factories`
+. OSGI（Open Service Gateway Initiative） eclipse
+
 实例：
 
 . jdbc 驱动加载
