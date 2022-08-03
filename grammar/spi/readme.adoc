@@ -6,6 +6,10 @@
 . jdk 自带（当前）
 . spring SPI - `spring.factories`
 . OSGI（Open Service Gateway Initiative） eclipse
+.. "OSGi" 相比 "传统 java 模块化" 有以下优势：
+... 基于接口编程，完全隐藏底层代码实现
+... 动态性(对扩展开放，即使是运行时的)
+... 版本控制
 
 实例：
 
