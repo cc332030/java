@@ -38,7 +38,7 @@ ServivorTo 内存不足 或者是大对象
 
 == 永久代
 
-不会进行 GC
+MojorGC
 
 == 其他
 

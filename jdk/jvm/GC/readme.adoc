@@ -1,2 +1,19 @@
 
 = GC
+
+== MinorGC
+
+新生代 GC
+
+== FullGC
+
+新生代 GC + 老年代 GC
+
+发生原因
+
+. 新分配的大对象大小大于老年代的剩余空间
+. Minor GC 后存活的对象大小大于老年代的剩余空间
+
+== MojorGC
+
+老年代 GC，很多MojorGC 是由MinorGC 触发的，所以有时候很难将MajorGC 和MinorGC区分开。
