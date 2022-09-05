@@ -1,0 +1,25 @@
+
+= Java 探针
+
+Java 代理，可以在 class 被装载到 JVM 之前将 class 字节码转换掉，从而达到动态注入代码的目的。
+
+JDK6 中通过 Java Tool API 中的 attach 方式，我们也可以很方便地在运行过程中动态地设置加载代理类，以达到 instrumentation 的目的。
+
+Instrumentation 的最大作用，就是类定义动态改变和操作。
+
+`java -javaagent:G:\myagent.jar=Hello1 -jar myapp.jar`
+
+== 场景
+
+. JRebel XRebal 热部署、监控
+. SkyWalking
+. arthas
+
+== JDK
+
+. JDK5，only -javaagent
+. JDK6，-javaagent + 动态 attach
+
+== 扩展
+
+spring boot devtools 是通过自定义 ClassLoader 实现热部署的
