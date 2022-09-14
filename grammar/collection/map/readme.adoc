@@ -18,3 +18,8 @@ size: 2^n, total > size * 0.75（可变） +
 == map null 支持情况
 
 image::.readme_images/map-of-null-supported.png[map null 支持情况]
+
+为什么不能为 null？
+
+. ConcurrentHashMap 并发时，如果 key, value 为 null，无法区分是没有数据还是 value = null，因为使用 containsKey 时，数据可能已经变化
+. TreeMap key 不能为空，因为 key 需要比较排序
