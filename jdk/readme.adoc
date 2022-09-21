@@ -31,5 +31,6 @@ JAVA_TOOL_OPTIONS
 . 程序计数器（Program Counter Register）：线程私有。
 
     有些文章也翻译成PC寄存器（PC Register），同一个东西。它可以看作是当前线程所执行的字节码的行号指示器。指向下一条要执行的指令。
+    不会 OOM
 
 image::内存结构.png[]
