@@ -8,9 +8,14 @@ size: size + size > 1 +
 
 == ArrayList
 
+只能头插
+
 jdk7 无参构造方法创建的是空数组，添加元素时才初始化
 
+
 == LinkedList
+
+头插 + 尾插
 
 . jdk1.6 双向循环列表
     初始化一个 Entry 作为 header，首尾相连
