@@ -1,0 +1,24 @@
+
+= 元空间
+
+在对 java jvm 进行性能监控时，发现了两个新名词
+
+. Meta space 元空间
+
+    由永久代替换而来，
+
+    空间达到 GC阈值时（Metadata GC Threshold），会触发 FullGC
+
+.. -XX:MetaspaceSize Metaspace
+
+    由于使用不断扩容到此参数指定的量，就会发生 FGC，且之后每次 Metaspace 扩容都可能会发生FGC（至于什么时候会，比较复杂，跟几个参数有关）
+
+    默认阈值是21807104（约20.8m），可以通过 jinfo -flag MetaspaceSize pid 得到这个值
+
+    如果 MaxMetaspaceSize 设置太小，可能会导致频繁FullGC，甚至OOM
+
+    最好和 MaxMetaspaceSize 一样大
+
+.. -XX:MaxMetaspaceSize 最大元空间
+
+. compressed class space 类压缩空间
