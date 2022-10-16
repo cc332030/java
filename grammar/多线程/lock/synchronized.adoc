@@ -1,6 +1,20 @@
 
 = synchronized
 
+每一个对象的对象头会关联一个 Monitor 对象，这个 Monitor 对象的实现底层是用C++写的，对应在虚拟机里的ObjectMonitor.hpp文件中。
+
+同步代码块
+
+. 当进入 method 方法的 synchronized 代码块时，通过 monitorenter 指令获得 Monitor 对象的所有权，此时 count+1 ，Monitor 对象的 owner 指向当前线程；
+. 如果当前线程已经是 Monitor 对象的 owner 了，再次进入 synchronized 代码块时，会将 count+1；
+. 当线程执行完 synchronized 代码块里的内容后，会执行 monitorexit，对应的 count-1，直到 count 为0时，才认为 Monitor 对象不再被线程占有，其他线程才可以尝试获取 Monitor 对象。
+
+同步方法
+
+    当线程调用到方法时，会判断一个标志位：ACC_SYNCHRONIZED。当方法是同步方法时，会有这个标志位，ACC_SYNCHRONIZED会去隐式调用那两个指令：monitorenter和monitorexit去获得和释放Monitor对象。
+
+归根到底，synchronized关键字还是看哪个线程获得了对象对应的 Monitor 对象。
+
 == 锁升级
 
 . 无锁
