@@ -17,3 +17,4 @@ GC Roots：
 . 方法区中类静态属性所引用的对象（with static）
 . 方法区中常量所引用的对象（with final static）
 . 本地方法栈所引用的对象
+. 所有被同步锁持有的对象
