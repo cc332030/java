@@ -4,13 +4,16 @@
 [source,shell]
 ----
 
+pid=
+thread_id=
+
 # 筛选线程
 # 找出运行时间最长的线程（阻塞）
-top -Hp 31608
+top -Hp ${pid}
 
 # 线程转16进制
-printf "%x\n" 31623
+printf "%x\n" ${thread_id}
 
-jstack 31608 > jstack.log
+jstack ${thread_id} > jstack.log
 
 ----
