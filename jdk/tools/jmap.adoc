@@ -70,3 +70,30 @@ jmap -histo ${pid} | less
 jmap -histo:live ${pid} | less
 
 ----
+
+查看所有对象及数量，对象说明
+
+|===
+|Header 1 |Header 2
+
+|B
+|byte
+
+|C
+|char
+
+|D
+|double
+
+|F
+|float
+
+|I
+|int
+
+|J
+|long
+
+|Z
+|boolean
+|===
