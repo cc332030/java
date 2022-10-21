@@ -1,0 +1,10 @@
+
+= jhat
+
+[source,shell]
+----
+
+# 通过 jhat 对dump文件进行分析，端口是外部访问的端口
+jhat -port 9999 dump.dat
+
+----
