@@ -1,0 +1,80 @@
+
+= jstat
+
+[source,shell]
+----
+
+# 查看class加载统计
+jstat -class ${pid}
+
+# 查看编译统计
+jstat -compiler ${pid}
+
+# 打印GC情况（每1秒中打印一次，共打印5次）
+jstat -gc ${pid} 1000 5
+
+: << EOF
+ S0C    S1C    S0U    S1U      EC       EU        OC         OU       MC     MU      CCSC    CCSU    YGC   YGCT    FGC    FGCT     GCT
+2048.0 3072.0 736.0   0.0   49152.0  17921.2   90112.0    48597.7   85632.0 81356.3 11392.0 10656.6  84    1.691   3      0.508    2.199
+EOF
+
+----
+
+
+GC 情况列意义
+
+|===
+|列 |意义
+
+|S0C
+|第一个Survivor区的大小（KB）
+
+|S1C
+|第二个Survivor区的大小（KB）
+
+|S0U
+|第一个Survivor区的使用大小（KB）
+
+|S1U
+|第二个Survivor区的使用大小（KB）
+
+|EC
+|Eden区的大小（KB）
+
+|EU
+|Eden区的使用大小（KB）
+
+|OC
+|Old区大小（KB）
+
+|OU
+|Old使用大小（KB）
+
+|MC
+|方法区大小（KB）
+
+|MU
+|方法区使用大小（KB）
+
+|CCSC
+|压缩类空间大小（KB）
+
+|CCSU
+|压缩类空间使用大小（KB）
+
+|YGC
+|年轻代垃圾回收次数
+
+|YGCT
+|年轻代垃圾回收消耗时间
+
+|FGC
+|老年代垃圾回收次数
+
+|FGCT
+|老年代垃圾回收消耗时间
+
+|GCT
+|垃圾回收消耗总时间
+
+|===
