@@ -1,0 +1,9 @@
+
+= jps
+
+[source,shell]
+----
+# 查看jvm中的进程
+jps -l
+
+----
