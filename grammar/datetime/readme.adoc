@@ -3,6 +3,10 @@
 
 [source,text]
 ----
+
+yyyy-MM-dd'T'HH:mm:ss.SSSX
+2023-09-21T11:22:11.000+0800
+
 yyyy-MM-dd'T'HH:mm:ss.SSS'Z
 2023-06-22T06:19:15.000Z
 
