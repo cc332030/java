@@ -1,6 +1,13 @@
 
 = java-note
 
+[source,shell]
+----
+docker run \
+  -v /data:/data \
+  adoptopenjdk:8-jdk-hotspot
+----
+
 JAVA_TOOL_OPTIONS
 [source,shell script]
 ----
