@@ -3,5 +3,5 @@
 
 [source,shell]
 ----
-java -Xlog:gc*=debug:file=gc.log:time,pid:filecount=10,filesize=10M -jar boot.jar
+java -Xlog:gc*=debug:file=gc.log:time,level,tags,pid:filecount=10,filesize=10M -jar boot.jar
 ----
