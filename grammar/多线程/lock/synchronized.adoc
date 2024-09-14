@@ -13,7 +13,7 @@
 
     当线程调用到方法时，会判断一个标志位：ACC_SYNCHRONIZED。当方法是同步方法时，会有这个标志位，ACC_SYNCHRONIZED会去隐式调用那两个指令：monitorenter和monitorexit去获得和释放Monitor对象。
 
-归根到底，synchronized关键字还是看哪个线程获得了对象对应的 Monitor 对象。
+归根到底，synchronized 关键字还是看哪个线程获得了对象对应的 Monitor 对象。
 
 == 锁升级
 
