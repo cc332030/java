@@ -15,6 +15,17 @@
 init: 16 +
 size: 2^n, total > size * 0.75（可变） +
 
+== 锁
+
+. <= jdk1.7
+.. 分段锁
+... 优点：在于保证在操作不同段 map 的时候可以并发执行，操作同段 map 的时候，进行锁的竞争和等待。这相对于直接对整个map同步synchronized是有优势的。
+... 缺点：分成很多段时会比较浪费内存空间(不连续，碎片化); 操作map时竞争同一个分段锁的概率非常小时，分段锁反而会造成更新等操作的长时间等待; 当某个段很大时，分段锁的性能会下降。
+
+. >= 1.8
+.. CAS、volatile、synchronized
+... 头节点加锁来保证线程安全的，锁的粒度相比 Segment 来说更小了
+
 == map null 支持情况
 
 image::.readme_images/map-of-null-supported.png[map null 支持情况]
