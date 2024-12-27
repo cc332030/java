@@ -11,6 +11,7 @@ docker run \
 JAVA_TOOL_OPTIONS
 [source,shell script]
 ----
--Dfile.encoding=utf-8 -Xms64m -Xmx128m
+-Dfile.encoding=utf-8 -Xms32m
+-Xmx128m
 
 ----
