@@ -11,9 +11,6 @@ pid=1
 # 导出内存信息
 jmap -dump:format=b,file=${pid}-1.hprof ${pid}
 
-# 查看堆栈占用空间，新生代，老年代
-jmap -heap ${pid}
-
 : << EOF
 Attaching to process ID 11187, please wait...
 Debugger attached successfully.
