@@ -11,7 +11,9 @@ tt -t org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandle
 # 3. 通过OGNL获取ApplicationContext
 tt -i 1000 -w 'target.getApplicationContext()'
 
-# 4. 从ApplicationContext中提取所有配置
-tt -i 1000 -w 'target.getApplicationContext().getEnvironment().getPropertySources()'
+# 4. 从ApplicationContext中提取所有配置 StandardServletEnvironment
+tt -i 1000 -w 'target.getApplicationContext().getEnvironment()'
+
+tt -i 1000 -w 'target.getApplicationContext().getEnvironment().getProperty("feign.client.config.default.read-timeout")'
 
 ----
