@@ -11,6 +11,12 @@ pid=1
 # 导出内存信息
 jmap -dump:format=b,file=${pid}-1.hprof ${pid}
 
+# 查看所有对象及数量，包括活跃以及非活跃的
+jmap -histo ${pid} | less
+
+# 查看活跃对象及数量
+jmap -histo:live ${pid} | less
+
 : << EOF
 Attaching to process ID 11187, please wait...
 Debugger attached successfully.
@@ -59,12 +65,6 @@ PS Old Generation
 
 32449 interned Strings occupying 3252776 bytes.
 EOF
-
-# 查看所有对象及数量，包括活跃以及非活跃的
-jmap -histo ${pid} | less
-
-# 查看活跃对象及数量
-jmap -histo:live ${pid} | less
 
 ----
 
