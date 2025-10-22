@@ -14,6 +14,6 @@ top -Hp ${pid}
 # 线程转16进制
 printf "%x\n" ${thread_id}
 
-jstack ${thread_id} > jstack.log
+jstack ${thread_id} > jstack-${thread_id}.log
 
 ----
