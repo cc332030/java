@@ -1,0 +1,9 @@
+
+= 查看类实例属性
+
+[source,shell]
+----
+
+vmtool --action getInstances --className com.alibaba.druid.pool.DruidDataSource --limit 10 -x 2
+
+----

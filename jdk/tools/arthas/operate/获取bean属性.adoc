@@ -1,0 +1,12 @@
+
+= 获取bean属性
+
+[source,shell]
+----
+
+sc com.alibaba.druid.pool.DruidDataSource
+
+# 通过Spring上下文获取dataSource实例（适用于Spring应用）
+ognl '#springContext=org.springframework.web.context.ContextLoader.getCurrentWebApplicationContext(), #dataSource=#springContext.getBean("druidDataSource"), #dataSource'
+
+----
