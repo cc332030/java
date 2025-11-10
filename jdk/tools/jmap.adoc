@@ -8,6 +8,15 @@
 
 pid=1
 
+# 查看堆栈占用空间，新生代，老年代
+jmap -heap ${pid}
+
+# 查看所有对象及数量，包括活跃以及非活跃的
+jmap -histo ${pid} | less
+
+# 查看活跃对象及数量
+jmap -histo:live ${pid} | less
+
 # 导出内存信息
 jmap -dump:format=b,file=${pid}-1.hprof ${pid}
 
