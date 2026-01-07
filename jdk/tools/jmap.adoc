@@ -9,9 +9,11 @@
 pid=1
 
 # 查看堆栈占用空间，新生代，老年代
-jmap -heap ${pid}
+jmap -heap ${pid}  > jmap-heap-${pid}.txt
+jmap -heap ${pid} | less
 
 # 查看所有对象及数量，包括活跃以及非活跃的
+jmap -histo ${pid} > jmap-histo-${pid}.txt
 jmap -histo ${pid} | less
 
 # 查看活跃对象及数量
@@ -21,6 +23,12 @@ jmap -histo:live ${pid} | less
 jmap -dump:format=b,file=${pid}-1.hprof ${pid}
 # 导出内存信息，强制
 jmap -F -dump:format=b,file=${pid}-1.hprof ${pid}
+
+# 查看所有对象及数量，包括活跃以及非活跃的
+jmap -histo ${pid} | less
+
+# 查看活跃对象及数量
+jmap -histo:live ${pid} | less
 
 : << EOF
 Attaching to process ID 11187, please wait...
