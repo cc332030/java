@@ -19,6 +19,8 @@ jmap -histo:live ${pid} | less
 
 # 导出内存信息
 jmap -dump:format=b,file=${pid}-1.hprof ${pid}
+# 导出内存信息，强制
+jmap -F -dump:format=b,file=${pid}-1.hprof ${pid}
 
 # 查看所有对象及数量，包括活跃以及非活跃的
 jmap -histo ${pid} | less
