@@ -17,6 +17,7 @@ jmap -histo ${pid} > jmap-histo-${pid}.txt
 jmap -histo ${pid} | less
 
 # 查看活跃对象及数量
+jmap -histo:live ${pid} > jmap-histo-live-${pid}.txt
 jmap -histo:live ${pid} | less
 
 # 导出内存信息
