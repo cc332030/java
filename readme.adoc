@@ -4,8 +4,7 @@
 [source,shell]
 ----
 docker run \
-  -it \
-  --rm \
+  -it --rm \
   -v /data:/data \
   adoptopenjdk:8-jdk-hotspot
 ----
